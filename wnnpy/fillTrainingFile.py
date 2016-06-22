@@ -2,7 +2,7 @@ import math
 import random
 import numpy as np
 
-noiseSigma = 1.5
+noiseSigma = 1.0
 
 
 def testfunc(x):
@@ -35,4 +35,4 @@ def plotit():
     plt.show()
 
 
-plotit()
+#plotit()
