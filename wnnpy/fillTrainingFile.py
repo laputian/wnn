@@ -1,16 +1,20 @@
+import math
+import random
 import numpy as np
+
+noiseSigma = 1.5
 
 
 def testfunc(x):
-    return 10 * np.sin(2 * np.pi * x / 32)
+    return 10 * math.sin(2 * math.pi * x / 32)
 
-def gaussian():
-    return np.random.normal(0.0, 2)
+def gaussian(noiseSigma = noiseSigma):
+    return np.random.normal(0.0, noiseSigma)
 
 def save_records(max , filename='training.txt'):
     out_file = open(filename,"w")
     for _ in range(max*10 + 1):
-        x = max * np.random.rand()
+        x = random.randrange(0, max)
         out_file.write(str(x)+" "+str(testfunc(x)+gaussian())+"\n")
     out_file.close()
 
@@ -22,7 +26,7 @@ def testfuncNoise(filename='training.txt'):
 
 import matplotlib.pyplot as plt
 
-def plot():
+def plotit():
     u = np.arange(0, 64, 0.1)
     plt.figure(1)
     plt.axis([0, 64, -15, 15])
@@ -31,4 +35,4 @@ def plot():
     plt.show()
 
 
-plot()
+plotit()

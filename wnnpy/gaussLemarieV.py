@@ -66,3 +66,5 @@ def plot(lemarie=False):
 def showplot(lemarie=False):
 	plot(lemarie)
 	
+#showplot(True)
+	
